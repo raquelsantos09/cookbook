@@ -10,7 +10,25 @@ const recipeSchema = new Schema(
     content: {
       type: String,
       required: true,
-      unique: true,
+    },
+    keywords: {
+      type: String,
+    },
+    author: {
+      type: String,
+      ref: "User",
+    },
+    category: {
+      type: String,
+      required: true,
+      enum: ["Vegan", "Vegeterian", "Soup", "Salad", "Dessert", "Breakfast", "Main dish", "Appetizers", "Drinks"],
+    },
+    origin: {
+      type: String,
+    },
+    servingSize: {
+      type: Number,
+      required: true,
     },
     ingredients: {
       type: [String],
@@ -25,8 +43,19 @@ const recipeSchema = new Schema(
       enum: ['easy', 'medium', 'hard'],
       required: true,
     },
-  },
-  {
+    directions: {
+      type: String,
+      required: true,
+    },
+    image: {
+      data: Buffer,
+
+      contentType: String,
+    },
+    videoURL: {
+      type: String,
+    },
+
     // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
   }
