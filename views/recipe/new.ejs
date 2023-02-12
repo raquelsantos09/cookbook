@@ -1,135 +1,89 @@
-<form method="POST" action="<% if (update) { %>
-    /recipes/<%- recipe._id %>/update
-   <% } else { %>
-    /recipes/new
-  <% } %>">
-    
+<div class="container d-flex flex-column align-items-center">
+  <form  class="w-50 d-flex flex-column" method="POST" action="/recipe/new">
+    <h2 class="main-header">Create a new Recipe</h2>
     <label>
       Title:
-      <input type="text" name="title" value="<% if (update) { %><%= recipe.title %><% } %>" />
+      <input type="text" name="title" />
     </label>
-  
+    <br/>
     <label>
       Content:
-      <input type="text" name="content" value="<% if (update) { %><%= recipe.content %><% } %>" />
+      <input type="text" name="content" />
     </label>
-    
+    <br/>
     <label>
       Ingredients:
-      <input type="text" name="ingredients" value="<% if (update) { %><%= recipe.ingredients.join(' ') %><% } %>" />
+      <input type="text" name="ingredients" />
     </label>
-    
+    <br/>
     <label>
       Cooking Time:
-      <input type="number" name="cookingTime" value="<% if (update) { %><%= recipe.cookingTime %><% } %>" />
+      <input type="number" name="cookingTime" />
     </label>
-  
+    <br/>
     <label>
       Serving size:
-      <input type="number" name="servingSize" value="<% if (update) { %><%= recipe.servingSize %><% } %>" />
+      <input type="number" name="servingSize" />
     </label>
-  
+    <br/>
     <label>
-     Directions:
-      <input type="text" name="directions" value="<% if (update) { %><%= recipe.directions %><% } %>" />
+      Directions:
+           <textarea type="text" name="directions" cols="40" rows="5"></textarea>
     </label>
-  
-     <label>
+    <br/>
+    <label>
       Author:
-      <input type="text" name="author" value="<% if (update) { %><%= recipe.author %><% } %>" />
+      <input type="text" name="author" /> 
+      <span> Fill this part if you copied the recipe from another person.</span>
     </label>
-  
-     <label>
+    <br/>
+    <label>
       Video-Link:
-      <input type="text" name="video" value="<% if (update) { %><%= recipe.video %><% } %>" />
+      <input type="text" name="video" />
     </label>
-  
-     <label>
-      Image:
-      <input type="text" name="image" value="<% if (update) { %><%= recipe.image %><% } %>" />
+    <br/>
+    <label>
+      Image: ????????
+        <img src="...."/>
+        <input type="submit" value="Click"/>
     </label>
-  
+    <br/>
     <label>
       Origin:
-      <input type="text" name="origin" value="<% if (update) { %><%= recipe.origin %><% } %>" />
+      <input type="text" name="origin" />
     </label>
-    
+    <br/>
     <label>
       Difficulty:
-      <select name="difficulty">
-        <% if (update) { %>
-          <option value="easy" <% if (recipe.difficulty === 'easy') { %>
-         selected
-        <% } %>>Easy</option>
-        <option value="medium" <% if (recipe.difficulty === 'medium') { %>
-          selected
-         <% } %>>Medium</option>
-        <option value="hard" <% if (recipe.difficulty === 'hard') { %>
-          selected
-         <% } %>>Hard</option>
-         <% } else { %>
-          <option value="easy">Easy</option>
-           <option value="medium" selected>Medium</option>
-           <option value="hard">Hard</option>
-        <% } %>
+      <select class="form-control" id="recipe-difficulty" name="difficulty">
+        <option value="easy" selected>Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
       </select>
-    </label>
-  
-    <label>
-      Category:
-      <select name="category">
-        <% if (update) { %>
-          <option value="vegan" <% if (recipe.category === 'Vegan') { %>
-         selected
-        <% } %>Vegan</option>
-        <option value="vegetarian" <% if (recipe.category === 'Vegetarian') { %>
-          selected
-         <% } %>Vegetarian</option>
-        <option value="main-dish" <% if (recipe.category === 'Main dish') { %>
-          selected
-         <% } %>Main dish</option>
-          <option value="soup" <% if (recipe.category === 'Soup') { %>
-         selected
-        <% } %>Soup</option>
-          <option value="salad" <% if (recipe.category === 'Salad') { %>
-         selected
-        <% } %>Salad</option>
-          <option value="dessert" <% if (recipe.category === 'Dessert') { %>
-         selected
-        <% } %>Dessert</option>
-          <option value="breakfast" <% if (recipe.category === 'Breakfast') { %>
-         selected
-        <% } %>Breakfast</option>
-          <option value="appetizers" <% if (recipe.category === 'Appetizers') { %>
-         selected
-        <% } %>Appetizers</option>
-          <option value="drinks" <% if (recipe.category === 'Drinks') { %>
-         selected
-        <% } %>Drinks</option>
-         <% } else { %>
-          <option value="vegan">Vegan</option>
-           <option value="vegetarian" selected>Vegetarian</option>
-           <option value="main-dish">Main dish</option>
-           <option value="soup">Soup</option>
-           <option value="salad" selected>Salad</option>
-           <option value="dessert">Dessert</option>
-           <option value="breakfast">Breakfast</option>
-           <option value="appetizers" selected>Appetizers</option>
-           <option value="drinks">Drinks</option>
-        <% } %>
-      </select>
-    </label>
-          
-   <label>
-     Keywords:
-      <input type="text" name="keywords" value="<% if (update) { %><%= recipe.keywords %><% } %>" />
-    </label>
-          
-    <button type="submit">
-      <% if (update) { %>
-        Update recipe
-      <% } else { %>
-        Create new recipe
-      <% } %>
-    </button>
+      <br/>
+      <label>
+        Category:
+        <select class="form-control" id="recipe-category" name="category">
+          <option value="vegan" selected>Vegan</option>
+          <option value="vegetarian">Vegetarian</option>
+          <option value="maindish">Main-dish</option>
+          <option value="soup" selected>Soup</option>
+          <option value="salad">Salad</option>
+          <option value="dessert">Dessert</option>
+          <option value="breakfast" selected>Breakfast</option>
+          <option value="appetizers">Appetizers</option>
+          <option value="drinks">Drinks</option>
+        </select>
+      </label>
+      <br/>
+      <br/>
+      <label>
+        Keywords:
+        <input type="text" name="keywords" />
+      </label>
+      <br/>
+         <br/>
+      <button type="submit">Create new recipe</button>
+      <br/>
   </form>
+</div>
