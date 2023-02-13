@@ -3,17 +3,6 @@ const router = express.Router();
 const User = require('../models/User.model')
 const Recipe = require('../models/Recipe.model')
 
-router.get('/all', async (req, res, next) => {
-    try {
-      const allRecipes = await Recipe.find()
-      console.log('All recipes :', allRecipes)
-
-      console.log(req.session)
-      res.render('recipe/all', { hopper: allRecipes })
-    } catch (error) {
-      console.log('Route to all recipes', error)
-    }
-  })
 /* GET new recipe page */
 router.get('/new',  (req, res, next) => {
     res.render('recipe/new')
@@ -27,7 +16,7 @@ router.get('/new',  (req, res, next) => {
     res.render('recipe/one',{newRecipe})
   })
   
-  router.get("/", async (req, res) =>{
+  router.get("/all", async (req, res) =>{
     try{
         const allRecipes = await Recipe.find()
         res.render("recipe/all", {allRecipes})
@@ -38,10 +27,10 @@ router.get('/new',  (req, res, next) => {
     }
 })
 
-router.get('/myRecipes', async (req, res, next) => {
+router.get('/myRecipes', async (req, res,) => {
   try {
 
-  const myRecipes = await Recipe.find({author: "63e7de7a5cdb91740ec1d740" })
+  const myRecipes = await Recipe.find({author: User._id})
   console.log(myRecipes)
   res.render("recipe/myRecipes", {myRecipes})
 } 
@@ -51,6 +40,12 @@ catch (error) {
 })
 
 
+
+router.get('/myFavRecipes',  (req, res,) => {
+  
+  res.render("recipe/myFavRecipes")
+
+})
 
 
 router.get("/:id", async (req, res) => {
@@ -65,7 +60,42 @@ router.get("/:id", async (req, res) => {
 })
 
 
+router.get("/:id/update", async (req, res) =>{
+  try {
+      const allUsers = await User.find()
+      const recipeFound = await Recipe.findById(req.params.id).populate("author")
+      res.render("recipe/updateRecipe", { recipeFound, allUsers })
+  }
+  catch(error) {
+      console.log(error)
+      res.redirect("/recipe/all")
+  }
+})
 
+
+
+router.post("/:id/update", async (req, res) =>{
+  try {
+      await Recipe.findByIdAndUpdate(req.params.id, {...req.body})
+      res.redirect(`/recipe/${req.params.id}`)
+  }
+  catch(error) {
+      console.log(error)
+      res.redirect("/recipe/all")
+  }
+})
+
+
+router.post("/:id/delete", async (req, res) =>{
+  try {
+      await Recipe.findByIdAndDelete(req.params.id)
+      res.redirect("/recipe/all")
+  }
+  catch(error) {
+      console.log(error)
+      res.redirect("/recipe/all")
+  }
+})
 
 
 
