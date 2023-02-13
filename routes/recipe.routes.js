@@ -7,6 +7,8 @@ router.get('/all', async (req, res, next) => {
     try {
       const allRecipes = await Recipe.find()
       console.log('All recipes :', allRecipes)
+
+      console.log(req.session)
       res.render('recipe/all', { hopper: allRecipes })
     } catch (error) {
       console.log('Route to all recipes', error)
@@ -36,9 +38,24 @@ router.get('/new',  (req, res, next) => {
     }
 })
 
+router.get('/myRecipes', async (req, res, next) => {
+  try {
+
+  const myRecipes = await Recipe.find({author: "63e7de7a5cdb91740ec1d740" })
+  console.log(myRecipes)
+  res.render("recipe/myRecipes", {myRecipes})
+} 
+catch (error) {
+  console.log('Route to my recipes', error)
+}
+})
+
+
+
+
 router.get("/:id", async (req, res) => {
   try {
-      const recipeFound = await Recipe.findById(req.params.id)
+      const recipeFound = await Recipe.findById(req.params.id).populate("author")
       res.render("recipe/recipeDetails", { recipeFound })
   }
   catch(error) {
@@ -46,6 +63,8 @@ router.get("/:id", async (req, res) => {
       res.redirect("/recipe")
   }
 })
+
+
 
 
 
