@@ -20,15 +20,15 @@ const recipeSchema = new Schema(
     },
     category: {
       type: String,
-      required: true,
-      enum: ["Vegan", "Vegeterian", "Soup", "Salad", "Dessert", "Breakfast", "Main dish", "Appetizers", "Drinks"],
+     required: true,
+      enum: ["vegan", "vegeterian", "soup", "salad", "dessert", "breakfast", "maindish", "appetizers", "drinks"],
     },
     origin: {
       type: String,
     },
     servingSize: {
       type: Number,
-      required: true,
+   required: true,
     },
     ingredients: {
       type: [String],
@@ -41,11 +41,11 @@ const recipeSchema = new Schema(
     difficulty: {
       type: String,
       enum: ['easy', 'medium', 'hard'],
-      required: true,
+     required: true,
     },
     directions: {
       type: String,
-      required: true,
+   required: true,
     },
     image: {
       data: Buffer,
@@ -56,11 +56,9 @@ const recipeSchema = new Schema(
       type: String,
     },
 
-    // this second object adds extra properties: `createdAt` and `updatedAt`
-    timestamps: true,
   }
 )
 
-const Recipe = model('Recipe', recipeSchema)
+const Recipe = model('Recipe', recipeSchema);
 
-module.exports = Recipe
+module.exports = Recipe;
