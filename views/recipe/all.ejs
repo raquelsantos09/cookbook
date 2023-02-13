@@ -1,0 +1,15 @@
+<div class="container d-flex flex-column align-items-center">
+    <h2 class="main-header">All the recipes in the DB</h2>
+    <div class="w-75">
+      <% if (!allRecipes.length) { %>
+      <h3>There is nothing in the DB.</h3>
+      <% } %> <% allRecipes.forEach(recipe => { %>
+      
+        <a class="recipe-title" href="/recipe/<%- recipe._id %> "
+          ><%= recipe.title %></a
+        >
+        <hr/>
+      </h4>
+      <% }) %>
+    </div>
+  </div>
