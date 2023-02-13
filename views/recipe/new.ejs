@@ -1,58 +1,58 @@
 <div class="container d-flex flex-column align-items-center">
-  <form  class="w-50 d-flex flex-column" method="POST" action="/recipe/new">
+  <form class="w-50 d-flex flex-column" method="POST" action="/recipe/new">
     <h2 class="main-header">Create a new Recipe</h2>
     <label>
       Title:
       <input type="text" name="title" />
     </label>
-    <br/>
+    <br />
     <label>
       Content:
       <input type="text" name="content" />
     </label>
-    <br/>
+    <br />
     <label>
       Ingredients:
       <input type="text" name="ingredients" />
     </label>
-    <br/>
+    <br />
     <label>
       Cooking Time:
       <input type="number" name="cookingTime" />
     </label>
-    <br/>
+    <br />
     <label>
       Serving size:
       <input type="number" name="servingSize" />
     </label>
-    <br/>
+    <br />
     <label>
       Directions:
-           <textarea type="text" name="directions" cols="40" rows="5"></textarea>
+      <textarea type="text" name="directions" cols="40" rows="5"></textarea>
     </label>
-    <br/>
+    <br />
     <label>
       Author:
-      <input type="text" name="author" /> 
-      <span> Fill this part if you copied the recipe from another person.</span>
+      <input type="text" name="author"  /> 
+       
     </label>
-    <br/>
+    <br />
     <label>
       Video-Link:
       <input type="text" name="video" />
     </label>
-    <br/>
+    <br />
     <label>
       Image: ????????
-        <img src="...."/>
-        <input type="submit" value="Click"/>
+      <img src="...." />
+      <input type="submit" value="Click" />
     </label>
-    <br/>
+    <br />
     <label>
       Origin:
       <input type="text" name="origin" />
     </label>
-    <br/>
+    <br />
     <label>
       Difficulty:
       <select class="form-control" id="recipe-difficulty" name="difficulty">
@@ -60,7 +60,7 @@
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
       </select>
-      <br/>
+      <br />
       <label>
         Category:
         <select class="form-control" id="recipe-category" name="category">
@@ -75,15 +75,15 @@
           <option value="drinks">Drinks</option>
         </select>
       </label>
-      <br/>
-      <br/>
+      <br />
+      <br />
       <label>
         Keywords:
         <input type="text" name="keywords" />
       </label>
-      <br/>
-         <br/>
+      <br />
+      <br />
       <button type="submit">Create new recipe</button>
-      <br/>
+      <br />
   </form>
 </div>
