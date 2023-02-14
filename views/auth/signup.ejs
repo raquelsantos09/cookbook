@@ -1,3 +1,5 @@
+
+<div class="signup-style">
 <h1>Signup</h1>
 <form style="display: flex; flex-direction: column" method="POST" action="/auth/signup">
     <label>Username: <input type="text" name="username" <% if (typeof errorMessage !=='undefined' ) { %>
@@ -12,3 +14,4 @@
         <%= errorMessage %>
     </p>
     <% } %>
+</div>
