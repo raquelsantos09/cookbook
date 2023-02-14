@@ -89,7 +89,13 @@ router.get("/:id/update", async (req, res) => {
   }
 })
 
-router.post("/:id/update", async (req, res) => {
+router.post("/:id/update", fileUploader.single('recipe-image'), async (req, res) => {
+  let imageUrl;
+  if (req.file) {
+    imageUrl = req.file.path;
+  } else {
+    imageUrl = existingImage;
+  }
   try {
     await Recipe.findByIdAndUpdate(req.params.id, { ...req.body })
     res.redirect(`/recipe/${req.params.id}`)
