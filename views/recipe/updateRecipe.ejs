@@ -33,9 +33,9 @@
       </label>
       <br />
       <label>
-        Image: 
-        <img src="...." />
-        <input type="submit" value="Click" %>/>
+        Image:
+        <input type="file" name="movie-cover-image" class="form-control-file" />
+        <input type="text" name="existingImage" hidden value="<%= recipeFound.imageUrl %>">
       </label>
       <br />
       <label>
@@ -73,7 +73,7 @@
         </label>
         <br />
         <br />
-        <button type="submit">Update</button>
+<button type="submit" class="btn btn-success">Save changes</button>
         <br />
     </form>
   </div>
