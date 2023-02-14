@@ -17,15 +17,11 @@ body {
   background-size: cover;
 }
 
-/*
+
 .signup-bg {
-  background: url(../images/pexels-elle-hughes-1660030.jpg);
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: whitesmoke;
 }
-*/
+
 .index-headline {
   margin-top: 100px;
   position: relative;

@@ -1,44 +1,32 @@
+
 <body class="signup-bg">
-  <div>
-    <h3>Sign Up</h3>
-    <hr />
-
-    <form method="POST" action="/auth/signup">
-      <div class="form-outline mb-4">
-        <label class="form-label" for="form1Example1"
-          >Username: <input type="text" name="username" id="form1Example1"
-          class="form-control"<% if (typeof errorMessage !=='undefined' ) { %>
-          value="<%= userData.username %>" <% } %> /></label
-        >
-      </div>
-
-      <div class="form-outline mb-4">
-        <label
-          >Email: <input type="text" name="email" id="form1Example2"
-          class="form-control" required <% if (typeof errorMessage
-          !=='undefined' ) { %> value="<%= userData.email %>" <% } %> /></label
-        >
-      </div>
-
-      <div class="form-outline mb-4">
-        <label
-          >Password:
-          <input
-            type="password"
-            name="password"
-            id="form1Example3"
-            class="form-control"
-            required
-        /></label>
-      </div>
-
-      <button type="button" class="btn btn-outline-dark">
-        Create an account
-      </button>
-    </form>
-
-    <% if (typeof errorMessage !=='undefined' ) { %>
-    <p style="color: red"><%= errorMessage %></p>
+<h3>Signup</h3>
+<form style="display: flex; flex-direction: column" method="POST" action="/auth/signup">
+    <label>Username: <input type="text" name="username" <% if (typeof errorMessage !=='undefined' ) { %>
+        value="<%= userData.username %>" <% } %> /></label>
+    <label>Email: <input type="text" name="email" required <% if (typeof errorMessage !=='undefined' ) { %> value="<%=
+            userData.email %>" <% } %> /></label>
+    <label>Password: <input type="password" name="password" required /></label>
+    <button type="submit">CREATE ACCOUNT</button>
+</form>
+<% if (typeof errorMessage !=='undefined' ) { %>
+    <p style="color: red">
+        <%= errorMessage %>
+    </p>
     <% } %>
+
+ 
+
+
+<div class="card" style="width: 25rem;">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
   </div>
 </body>
+  
+  
