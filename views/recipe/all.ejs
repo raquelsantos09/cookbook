@@ -2,24 +2,25 @@
 <hr>
 <div class="row">
   <% if (allRecipes?.length> 0) { %>
-    <% allRecipes.forEach(({ imageUrl, title, description, id })=> { %>
+    <% allRecipes.forEach(({ imageUrl, title, difficulty, id })=> { %>
       <div class="col-md-4 mb-5">
         <div class="card" style="width: 18rem;">
-          <img src="<%= imageUrl %>" class="card-img-top" alt="<%= recipe.title %>">
+          <img src="<%= recipe.imageUrl %>" class="card-img-top" alt="<%= recipe.title %>">
           <div class="card-body">
             <h5 class="card-title">
               <%= recipe.title %>
             </h5>
-            <p class="card-text">
-              <%= recipe.description %>
+           <p class="card-text">
+            <%= recipe.difficulty %>
             </p>
-            <%#!-- <a href="/recipe/<%= id %>/edit" class="btn btn-primary">Edit</a> --%>
+            <a href="/recipe/<%= recipe._id %>/edit" class="btn btn-primary">Edit</a> 
           </div>
         </div>
+          <button type="submit">Add to Favourites</button>
       </div>
       <% }) %>
         <% } else { %>
-          <p>There are no recipes yet!</p>
+          <p>You have no recipes yet!</p>
           <% } %>
             <hr />
 </div>
