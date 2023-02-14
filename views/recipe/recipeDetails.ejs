@@ -1,34 +1,29 @@
 <div class="container d-flex flex-column align-items-center">
-    <h2 class="main-header">Recipe details:</h2>
+  <h2 class="main-header">Recipe details:</h2>
+  <div class="w-75">
+    <h4><span>Title: </span>
+      <%= recipeFound.title %>
+    </h4>
+    <p><span>Ingredients: </span>
+      <%= recipeFound.ingredients %>
+    </p>
+    <p><span>Cooking Time: </span>
+      <%= recipeFound.cookingTime %>
+    </p>
     <div class="w-75">
-      <h4><span>Title: </span><%= recipeFound.title %></h4>
-      <p><span>Ingredients: </span><%= recipeFound.ingredients %></p>
-      <p><span>Cooking Time: </span><%= recipeFound.cookingTime %></p>
-      <div class="w-75">
-        
-        <h4><span>Author: </span><%= recipeFound.author %></h4>
-
-        <hr />
-       
-      </div>
-    
-      <form
-      class="col-6"
-      method="POST"
-      action="/recipe/<%- recipeFound._id %>/delete"
-    >
+      <h4><span>Author: </span>
+        <%= recipeFound.author %>
+      </h4>
+      <hr />
+    </div>
+    <form class="col-6" method="POST" action="/recipe/<%- recipeFound._id %>/delete">
       <button type="submit" class="btn btn-block btn-danger">
         Delete the recipe
       </button>
     </form>
-    <form
-      class="col-6"
-      method="GET"
-      action="/recipe/<%- recipeFound._id %>/update"
-    >
+    <form class="col-6" method="GET" action="/recipe/<%- recipeFound._id %>/update">
       <button type="submit" class="btn btn-block btn-danger">
         Update the recipe
       </button>
     </form>
   </div>
-  

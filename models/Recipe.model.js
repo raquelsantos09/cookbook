@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const { Schema, model } = require('mongoose')
 
 const recipeSchema = new Schema(
@@ -43,15 +44,17 @@ const recipeSchema = new Schema(
       type: String,
    required: true,
     },
-    image: {
-      data: Buffer,
-
-      contentType: String,
+    imageURL: {
+      //data: Buffer,
+      type: String,
+     // contentType: String,
     },
     videoURL: {
       type: String,
     },
-
+  },
+    {
+    timestamps: true
   }
 )
 
