@@ -45,6 +45,16 @@ router.get('/myRecipes', isLoggedIn, async (req, res,) => {
     console.log('Route to my recipes', error)
   }
 })
+router.get("/myRecipes/:id", async (req, res) => {
+  try {
+    const recipeFound = await Recipe.findById(req.params.id)
+    res.render("recipe/recipeDetails", { recipeFound })
+  }
+  catch (error) {
+    console.log(error)
+    res.redirect("recipe/all")
+  }
+})
 
 /*router.get('/myFavRecipes',isLoggedIn, async (req, res,) => {
   try {
@@ -63,7 +73,7 @@ router.get("/:id", async (req, res) => {
   }
   catch (error) {
     console.log(error)
-    res.redirect("/recipe")
+    res.redirect("recipe/all")
   }
 })
 
@@ -75,7 +85,7 @@ router.get("/:id/update", async (req, res) => {
   }
   catch (error) {
     console.log(error)
-    res.redirect("/recipe/all")
+    res.redirect("recipe/all")
   }
 })
 
@@ -86,7 +96,7 @@ router.post("/:id/update", async (req, res) => {
   }
   catch (error) {
     console.log(error)
-    res.redirect("/recipe/all")
+    res.redirect("recipe/all")
   }
 })
 
@@ -97,7 +107,7 @@ router.post("/:id/delete", async (req, res) => {
   }
   catch (error) {
     console.log(error)
-    res.redirect("/recipe/all")
+    res.redirect("recipe/all")
   }
 })
 
