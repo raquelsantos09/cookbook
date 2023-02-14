@@ -16,6 +16,9 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true
     },
+    recipe: [{type: Schema.Types.ObjectId,
+    ref: "Recipe" } ],
+
     passwordHash: {
       type: String,
       required: true
