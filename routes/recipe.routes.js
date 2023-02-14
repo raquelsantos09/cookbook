@@ -4,6 +4,7 @@ const User = require('../models/User.model')
 const Recipe = require('../models/Recipe.model')
 const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard')
 
+
 /* GET new recipe page */
 router.get('/new',  (req, res, next) => {
     res.render('recipe/new')
