@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User.model')
 const Recipe = require('../models/Recipe.model')
+const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard')
 
 /* GET new recipe page */
 router.get('/new',  (req, res, next) => {
@@ -27,25 +28,27 @@ router.get('/new',  (req, res, next) => {
     }
 })
 
-router.get('/myRecipes', async (req, res,) => {
+// The route below is not functioning as it should be. Need to do something with cookies.
+router.get('/myRecipes', isLoggedIn, async (req, res,) => {
   try {
+    const myRecipes = await Recipe.find({author : req.session.user._id })
 
-  const myRecipes = await Recipe.find({author: User._id})
-  console.log(myRecipes)
-  res.render("recipe/myRecipes", {myRecipes})
+    res.render("recipe/myRecipes", {myRecipes})
 } 
 catch (error) {
   console.log('Route to my recipes', error)
 }
 })
 
-
-
-router.get('/myFavRecipes',  (req, res,) => {
-  
-  res.render("recipe/myFavRecipes")
-
-})
+/*router.get('/myFavRecipes',isLoggedIn, async (req, res,) => {
+  try {
+    const myFavRecipes = await Recipe.find()
+    res.render("recipe/myFavRecipes", {myFavRecipes})
+} 
+catch (error) {
+  console.log('Route to my fav recipes', error)
+}
+})*/
 
 
 router.get("/:id", async (req, res) => {

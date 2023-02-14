@@ -7,10 +7,6 @@ const recipeSchema = new Schema(
       required: true,
       unique: true,
     },
-    content: {
-      type: String,
-      required: true,
-    },
     keywords: {
       type: String,
     },
@@ -43,7 +39,7 @@ const recipeSchema = new Schema(
       enum: ['easy', 'medium', 'hard'],
      required: true,
     },
-    directions: {
+    instructions: {
       type: String,
    required: true,
     },
