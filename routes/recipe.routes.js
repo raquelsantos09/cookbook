@@ -89,7 +89,7 @@ router.get("/:id/update", async (req, res) => {
   }
 })
 
-router.post("/:id/update", fileUploader.single('recipe-image'), async (req, res) => {
+router.post("/:id/update", fileUploader.single('recipe-image'), async (req, res, next) => {
   let imageUrl;
   if (req.file) {
     imageUrl = req.file.path;
