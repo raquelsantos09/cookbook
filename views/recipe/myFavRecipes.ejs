@@ -1,1 +1,15 @@
-<h2 >My favourite recipes </h2>
+<div class="container d-flex flex-column align-items-center">
+    <h2 class="main-header">My favourite recipes</h2>
+    <div class="w-75">
+      <% if (!myFavRecipes.length) { %>
+      <h3>You have no favourite recipes.</h3>
+      <% } %> <% myFavRecipes.forEach(recipe => { %>
+      
+        <a class="recipe-title" href="/recipe/myFavRecipes/<%- recipe._id %> "
+          ><%= recipe.title %></a
+        >
+        <hr/>
+      </h4>
+      <% }) %>
+    </div>
+  </div>
