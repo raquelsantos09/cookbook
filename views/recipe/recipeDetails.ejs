@@ -26,12 +26,6 @@
       <%= recipeFound.difficulty%>
     </p>
 
-    <div class="w-75">
-      <h4><span>Author: </span>
-        <%= recipeFound.author %>
-      </h4>
-      <hr />
-    </div>
     <form class="col-6" method="POST" action="/recipe/<%- recipeFound._id %>/delete">
       <button type="submit" class="btn btn-block btn-danger">
         Delete the recipe

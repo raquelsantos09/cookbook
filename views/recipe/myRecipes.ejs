@@ -5,7 +5,7 @@
       <h3>You have no recipes in the DB.</h3>
       <% } %> <% myRecipes.forEach(recipe => { %>
       
-        <a class="recipe-title" href="/recipe/myRecipes/<%- recipe._id %> "
+        <a class="recipe-title" href="/recipe/<%- recipe._id %> "
           ><%= recipe.title %></a
         >
         <hr/>
