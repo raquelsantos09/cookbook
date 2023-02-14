@@ -13,6 +13,23 @@
        
       </div>
     
-    
+      <form
+      class="col-6"
+      method="POST"
+      action="/recipe/<%- recipeFound._id %>/delete"
+    >
+      <button type="submit" class="btn btn-block btn-danger">
+        Delete the recipe
+      </button>
+    </form>
+    <form
+      class="col-6"
+      method="GET"
+      action="/recipe/<%- recipeFound._id %>/update"
+    >
+      <button type="submit" class="btn btn-block btn-danger">
+        Update the recipe
+      </button>
+    </form>
   </div>
   

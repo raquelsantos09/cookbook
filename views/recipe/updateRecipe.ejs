@@ -1,0 +1,84 @@
+<div class="container d-flex flex-column align-items-center">
+    <form class="w-50 d-flex flex-column" method="POST" action="/recipe/<%- recipeFound._id %>/update">
+      <h2 class="main-header">Update the Recipe</h2>
+      <label>
+        Title:
+        <input type="text" name="title" value="<%= recipeFound.title %>" />
+      </label>
+      <br />
+      <label>
+        Content:
+        <input type="text" name="content"  value="<%= recipeFound.content %>" />
+      </label>
+      <br />
+      <label>
+        Ingredients:
+        <input type="text" name="ingredients"  value="<%= recipeFound.ingredients %>"/>
+      </label>
+      <br />
+      <label>
+        Cooking Time:
+        <input type="number" name="cookingTime" value="<%= recipeFound.cookingTime %>"/>
+      </label>
+      <br />
+      <label>
+        Serving size:
+        <input type="number" name="servingSize" value="<%= recipeFound.servingSize %>" />
+      </label>
+      <br />
+      <label>
+        Directions:
+        <textarea type="text" name="directions" cols="40" rows="5" value="<%= recipeFound.directions %>" > </textarea>
+      </label>
+      <br />
+   
+      <label>
+        Video-Link:
+        <input type="text" name="video" value="<%= recipeFound.video %>" />
+      </label>
+      <br />
+      <label>
+        Image: 
+        <img src="...." />
+        <input type="submit" value="Click" %>/>
+      </label>
+      <br />
+      <label>
+        Origin:
+        <input type="text" name="origin" value="<%= recipeFound.origin %>" />
+      </label>
+      <br />
+      <label>
+        Difficulty:
+        <select class="form-control" id="recipe-difficulty" name="difficulty" value="<%= recipeFound.difficulty %>">
+          <option value="easy" selected>Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <br />
+        <label>
+          Category:
+          <select class="form-control" id="recipe-category" name="category" value="<%= recipeFound.category %>">
+            <option value="vegan" selected>Vegan</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="maindish">Main-dish</option>
+            <option value="soup" selected>Soup</option>
+            <option value="salad">Salad</option>
+            <option value="dessert">Dessert</option>
+            <option value="breakfast" selected>Breakfast</option>
+            <option value="appetizers">Appetizers</option>
+            <option value="drinks">Drinks</option>
+          </select>
+        </label>
+        <br />
+        <br />
+        <label>
+          Keywords:
+          <input type="text" name="keywords" value="<%= recipeFound.keywords %>" />
+        </label>
+        <br />
+        <br />
+        <button type="submit">Update</button>
+        <br />
+    </form>
+  </div>
