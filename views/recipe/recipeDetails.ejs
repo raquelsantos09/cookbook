@@ -1,6 +1,9 @@
 <div class="container d-flex flex-column align-items-center">
   <h2 class="main-header">Recipe details:</h2>
   <div class="w-75">
+    <img
+      <%= recipeFound.title %>
+    </h4>
     <h4><span>Title: </span>
       <%= recipeFound.title %>
     </h4>
@@ -19,6 +22,10 @@
     <p><span>Origin: </span>
       <%= recipeFound.origin%>
     </p>
+    <p><span>Difficulty: </span>
+      <%= recipeFound.difficulty%>
+    </p>
+
 
     <div class="w-75">
       <h4><span>Author: </span>
