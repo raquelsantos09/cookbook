@@ -25,26 +25,62 @@
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarScroll"
-          aria-controls="navbarScroll"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul
-            class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-            style="--bs-scroll-height: 100px"
-          >
-            <li class="nav-item dropdown">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <button
+              type="submit"
+              onClick="directToSignUp()"
+              class="btn btn-light"
+            >
+              Sign Up
+            </button>
+            <script>
+              function directToSignUp() {
+                window.location.href = "/auth/signup";
+              }
+            </script>
+            <button
+              type="button"
+              onClick="directToLogIn()"
+              class="btn btn-light"
+            >
+              Log In
+            </button>
+            <script>
+              function directToLogIn() {
+                window.location.href = "/auth/login";
+              }
+            </script>
+            <button
+              type="button"
+              onClick="directToHome()"
+              class="btn btn-light"
+            >
+              Log Out
+            </button>
+            <script>
+              function directToHome() {
+                window.location.href = "/";
+              }
+            </script>
+
+            <li class="nbtn-group dropend">
               <a
                 class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
                 href="#"
                 role="button"
-                data-bs-toggle="dropdown"
                 aria-expanded="false"
-              >Recipes</a>
+                >Recipes</a
+              >
+
               <ul class="dropdown-menu">
                 <li>
                   <a class="dropdown-item" href="#">Vegetarian</a>
@@ -61,12 +97,7 @@
                 <li><a class="dropdown-item" href="#">Breakfast</a></li>
               </ul>
             </li>
-            <button type="button" class="btn btn-light">Sign Up</button>
-            <li class="nav-item">
-            </li>
-            <button type="button" class="btn btn-light">Log In</button>
           </ul>
-
           <form class="d-flex" role="search">
             <input
               class="form-control me-2"
@@ -74,14 +105,12 @@
               placeholder="Search"
               aria-label="Search"
             />
-            <button type="button" class="btn btn-outline-dark">
-              Search</button>
-    
-            </button>
+            <button type="button" class="btn btn-outline-dark">Search</button>
           </form>
         </div>
       </div>
     </nav>
+
     <%- body %>
 
     <script
