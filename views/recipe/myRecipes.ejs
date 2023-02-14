@@ -1,8 +1,8 @@
 <div class="container d-flex flex-column align-items-center">
-    <h2 class="main-header">My recipes in the DB</h2>
+    <h2 class="main-header">My recipes</h2>
     <div class="w-75">
       <% if (!myRecipes.length) { %>
-      <h3>You have no recipes in the DB.</h3>
+      <h3>You have no recipes created yet!</h3>
       <% } %> <% myRecipes.forEach(recipe => { %>
       
         <a class="recipe-title" href="/recipe/<%- recipe._id %> "
