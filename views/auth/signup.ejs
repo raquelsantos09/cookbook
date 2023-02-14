@@ -1,32 +1,52 @@
-
 <body class="signup-bg">
-<h3>Signup</h3>
-<form style="display: flex; flex-direction: column" method="POST" action="/auth/signup">
-    <label>Username: <input type="text" name="username" <% if (typeof errorMessage !=='undefined' ) { %>
-        value="<%= userData.username %>" <% } %> /></label>
-    <label>Email: <input type="text" name="email" required <% if (typeof errorMessage !=='undefined' ) { %> value="<%=
-            userData.email %>" <% } %> /></label>
-    <label>Password: <input type="password" name="password" required /></label>
-    <button type="submit">CREATE ACCOUNT</button>
-</form>
-<% if (typeof errorMessage !=='undefined' ) { %>
-    <p style="color: red">
-        <%= errorMessage %>
-    </p>
-    <% } %>
-
- 
-
-
-<div class="card" style="width: 25rem;">
+  <div class="card" style="width: 25rem">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+      <h5 class="card-title">Sign Up</h5>
+      <hr color="gray" />
+
+      <form class="auth-card-container"
+        method="POST"
+        action="/auth/signup"
+      >
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Username</label>
+          <input type="text" class="form-control" id="formGroupExampleInput"
+          name="username" <% if (typeof errorMessage !=='undefined' ) { %>
+          value="<%= userData.username %>" <% } %> />
+        </div>
+
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Email address</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2"
+          name="email" required <% if (typeof errorMessage !=='undefined' ) { %>
+          value="<%= userData.email %>" <% } %> />
+        </div>
+
+        <div class="mb-3">
+          <label for="formGroupExampleInput3" class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" id="formGroupExampleInput3" required />
+        <p style="font-size: 12px; padding-top: 10px">Minimum of 10 characters</p>
+        </div>
+
+
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            I agree to the Equality, Inclusion and Diversity Policy.
+          </label>
+        </div>
+
+        <button type="button" class="btn btn-light">Create an account</button>
+      </form>
     </div>
   </div>
 </body>
-  
-  
+
+<% if (typeof errorMessage !=='undefined' ) { %>
+<p style="color: red"><%= errorMessage %></p>
+<% } %>
