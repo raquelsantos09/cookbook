@@ -11,7 +11,7 @@ body {
   background-size: cover;
 }
 
-h1 {
+.index-headline {
   margin-top: 100px;
   position: relative;
   color: white;
@@ -27,7 +27,6 @@ h1 {
   border-color: black;
 }
 
-
 .footer-style {
   position: absolute;
   bottom: 0;
@@ -38,3 +37,4 @@ h1 {
   height: 50px;
   color: white;
 }
+
