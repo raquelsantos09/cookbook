@@ -3,51 +3,25 @@ const router = express.Router();
 const User = require('../models/User.model')
 const Recipe = require('../models/Recipe.model')
 const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard')
-const fileUploader = require('../config/cloudinary.config')
-
-
-
-/* GET new recipe page */
-router.get('/new',  (req, res, next) => {
-    res.render('recipe/new')
-  })
-  
-  router.post('/new', async (req, res) => {
-    const body = req.body
-    console.log(body)
-    
-    const newRecipe = await (await Recipe.create({ ...body, ingredients: body.ingredients.split(' ') }))
-    res.render('recipe/one',{newRecipe})
-  })
-  
-  router.get("/all", async (req, res) =>{
-    try{
-        const allRecipes = await Recipe.find()
-        res.render("recipe/all", {allRecipes})
-    }
-    catch (error) {
-        console.log(error)
-        res.redirect("/")
-    }
+//const fileUploader = require('../config/cloudinary.config')
 
 router.get('/new', isLoggedIn, (req, res, next) => {
   res.render('recipe/new')
-
 })
 
 router.post('/new', async (req, res) => {
   try {
-  const body = req.body
-  console.log(body)
-  const author = req.session.user._id
-  const newRecipe = await (await Recipe.create({ ...body, ingredients: body.ingredients.split(' '), author: author }))
-  const findUser = await User.findOneAndUpdate({ _id: author }, { $push: { recipe: newRecipe._id } }, { new: true, runValidators: true })
-  res.render('recipe/one', { newRecipe })
-}
-catch (error) {
-  console.log("You have an error on the creating new recipe page.",error)
-  res.redirect("recipe/new")
-}
+    const body = req.body
+    console.log(body)
+    const author = req.session.user._id
+    const newRecipe = await Recipe.create({ ...body, ingredients: body.ingredients.split(' '), author: author })
+    const findUser = await User.findOneAndUpdate({ _id: author }, { $push: { recipe: newRecipe._id } }, { new: true, runValidators: true })
+    res.render('recipe/one', { newRecipe })
+  }
+  catch (error) {
+    console.log("You have an error on the creating new recipe page.", error)
+    res.redirect("recipe/new")
+  }
 })
 
 router.get("/all", async (req, res) => {
