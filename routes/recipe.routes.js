@@ -5,8 +5,34 @@ const Recipe = require('../models/Recipe.model')
 const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard')
 const fileUploader = require('../config/cloudinary.config')
 
+
+
+/* GET new recipe page */
+router.get('/new',  (req, res, next) => {
+    res.render('recipe/new')
+  })
+  
+  router.post('/new', async (req, res) => {
+    const body = req.body
+    console.log(body)
+    
+    const newRecipe = await (await Recipe.create({ ...body, ingredients: body.ingredients.split(' ') }))
+    res.render('recipe/one',{newRecipe})
+  })
+  
+  router.get("/all", async (req, res) =>{
+    try{
+        const allRecipes = await Recipe.find()
+        res.render("recipe/all", {allRecipes})
+    }
+    catch (error) {
+        console.log(error)
+        res.redirect("/")
+    }
+
 router.get('/new', isLoggedIn, (req, res, next) => {
   res.render('recipe/new')
+
 })
 
 router.post('/new', async (req, res) => {

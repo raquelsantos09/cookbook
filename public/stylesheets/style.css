@@ -2,12 +2,28 @@ body {
   padding: 50px;
   padding-bottom: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
-  background: url("../images/pexels-karolina-grabowska-4033212.jpg") no-repeat
-    center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+/* set background image per page */
+.home-bg {
+  background: url(../images/pexels-karolina-grabowska-4033212.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.signup-bg {
+  background: url(../images/pexels-elle-hughes-1660030.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -38,3 +54,6 @@ body {
   color: white;
 }
 
+.signup-style {
+  background-position: -9999px;
+}
