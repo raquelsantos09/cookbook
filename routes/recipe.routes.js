@@ -3,18 +3,18 @@ const router = express.Router();
 const User = require('../models/User.model')
 const Recipe = require('../models/Recipe.model')
 const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard')
-//const fileUploader = require('../config/cloudinary.config')
+const fileUploader = require('../config/cloudinary.config')
 
 router.get('/new', isLoggedIn, (req, res, next) => {
   res.render('recipe/new')
 })
 
-router.post('/new', async (req, res) => {
+router.post('/new', fileUploader.single('recipe-image'), async (req, res) => {
   try {
     const body = req.body
     console.log(body)
     const author = req.session.user._id
-    const newRecipe = await Recipe.create({ ...body, ingredients: body.ingredients.split(' '), author: author })
+    const newRecipe = await Recipe.create({ ...body, ingredients: body.ingredients.split(' '), author: author, imageUrl: req.file.path })
     const findUser = await User.findOneAndUpdate({ _id: author }, { $push: { recipe: newRecipe._id } }, { new: true, runValidators: true })
     res.render('recipe/one', { newRecipe })
   }
