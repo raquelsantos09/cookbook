@@ -96,9 +96,9 @@ router.post("/:id/update", fileUploader.single('recipe-image'), async (req, res,
   } else {
     imageURL = req.body.existingImage;
   }
-  console.log(req.body.existingImages)
+  console.log(req.body)
   try {
-    await Recipe.findByIdAndUpdate(req.params.id, { ...req.body, imageURL })
+    await Recipe.findByIdAndUpdate(req.params.id, { ...req.body, imageURL:imageURL }, { new: true })
     res.redirect(`/recipe/${req.params.id}`)
   }
   catch (error) {
