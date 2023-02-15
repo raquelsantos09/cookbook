@@ -1,10 +1,12 @@
-<h1>All recipes</h1>
+<%- include('../partials/nav.ejs') %> 
+<div class="container text-center  " style="margin-left: 0px; margin-top: 20px;">
+  <h1>Recipes</h1>
 <hr>
 <div class="row">
   <% if (allRecipes?.length> 0) { %>
     <% allRecipes.forEach(recipe => { %>
       <div class="col-md-4 mb-5">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem; margin:30px">
           <img src="<%= recipe.imageURL %>" class="card-img-top" alt="<%= recipe.title %>">
           <div class="card-body">
             <h5 class="card-title">
@@ -15,10 +17,9 @@
            <p class="card-text">
             <%= recipe.difficulty %>
             </p>
-            <a href="/recipe/<%= recipe._id %>/update" class="btn btn-primary">Edit</a>
-            <a href="/recipe/<%= recipe._id %>/update" class="btn btn-primary">Add to Favourites</a>
-            <button type="submit">Add to Favourites</button>
-          </div>
+            <a href="/recipe/<%= recipe._id %>/update" class="btn btn-success">Edit</a>
+            <a href="/recipe/<%= recipe._id %>/update" class="btn btn-light" >Add to Favourites</a>
+            </div>
         </div>
       </div>
       <% }) %>
@@ -26,4 +27,5 @@
           <p>You have no recipes yet!</p>
           <% } %>
             <hr />
+</div>
 </div>
