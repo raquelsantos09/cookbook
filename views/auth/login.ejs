@@ -1,14 +1,51 @@
-<div id="form">
-<h1>Login</h1>
-<form style="display: flex; flex-direction: column" method="POST" action="/auth/login">
-    <label>Username: <input type="text" name="username" /></label>
-    <label>Password: <input type="password" name="password" required /></label>
-    <button type="submit">LogIn</button>
+<body class="login-bg">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Log In</h4>
+      <hr color="gray" />
 
-<% if (typeof errorMessage !=='undefined' ) { %>
-    <p style="color: red">
-        <%= errorMessage %>
-    </p>
-    <% } %>
-</form>
-</div>
+      <form class="auth-card-container" method="POST" action="/auth/login">
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label"
+            >Username: </label>
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupExampleInput"
+              name="username"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="formGroupExampleInput3" class="form-label"
+            >Password: </label>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              id="formGroupExampleInput3"
+              required
+          />
+        </div>
+
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            I agree to the Equality, Inclusion and Diversity Policy.
+          </label>
+        </div>
+
+        <button type="button" class="btn btn-light">Log In</button>
+
+        <% if (typeof errorMessage !=='undefined' ) { %>
+        <p style="color: red"><%= errorMessage %></p>
+        <% } %>
+      </form>
+    </div>
+  </div>
+</body>
