@@ -43,17 +43,18 @@
               }
             </script>
             <button
-              type="button"
-              onClick="directToHome()"
-              class="btn btn-light"
-            >
-              Log Out
-            </button>
-            <script>
-              function directToHome() {
-                window.location.href = "/";
-              }
-            </script>
+            type="button"
+            onClick="directToAll()"
+            class="btn btn-light"
+          >
+            All Recipes
+          </button>
+          <script>
+            function directToAll() {
+              window.location.href = "/recipe/all";
+            }
+          </script>
+            
 
             <li class="nbtn-group dropend">
               <a
@@ -62,27 +63,28 @@
                 href="#"
                 role="button"
                 aria-expanded="false"
-                >Recipes</a
+                >Categories</a
               >
 
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="#">Vegetarian</a>
+                  <a class="dropdown-item" href="/category/vegetarian">Vegetarian</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">Vegan</a>
+                  <a class="dropdown-item" href="/category/vegan">Vegan</a>
                 </li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Appetizer</a></li>
-                <li><a class="dropdown-item" href="#">Main dish</a></li>
-                <li><a class="dropdown-item" href="#">Soup</a></li>
-                <li><a class="dropdown-item" href="#">Salad</a></li>
-                <li><a class="dropdown-item" href="#">Dessert</a></li>
-                <li><a class="dropdown-item" href="#">Breakfast</a></li>
+                <li><a class="dropdown-item" href="/category/appetizers">Appetizer</a></li>
+                <li><a class="dropdown-item" href="/category/breakfast">Breakfast</a></li>
+                <li><a class="dropdown-item" href="/category/soup">Soup</a></li>
+                <li><a class="dropdown-item" href="/category/salad">Salad</a></li>
+                <li><a class="dropdown-item" href="/category/maindish">Main dish</a></li>
+                <li><a class="dropdown-item" href="/category/dessert">Dessert</a></li>
+                <li><a class="dropdown-item" href="/category/drinks">Drinks</a></li>
               </ul>
             </li>
           </ul>
-          <form class="d-flex" role="search">
+         <form class="d-flex" role="search">
             <input
               class="form-control me-2"
               type="search"

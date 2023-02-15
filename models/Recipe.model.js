@@ -18,7 +18,7 @@ const recipeSchema = new Schema(
     category: {
       type: String,
      required: true,
-      enum: ["vegan", "vegeterian", "soup", "salad", "dessert", "breakfast", "maindish", "appetizers", "drinks"],
+      enum: ["vegan", "vegetarian", "soup", "salad", "dessert", "breakfast", "maindish", "appetizers", "drinks"],
     },
     origin: {
       type: String,
