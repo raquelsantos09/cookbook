@@ -1,1 +1,31 @@
-<h1>All Salad recipes</h1>
+<%- include('../partials/nav.ejs') %> 
+
+<div class="container text-center  " style="margin-left: 0px; margin-top: 20px;">
+<h1>Salads</h1>
+<div class="row">
+<% if (catRecipes?.length> 0) { %>
+  <% catRecipes.forEach(recipe=> { %>
+     <div class="col-md-4 mb-5">
+      <div class="card" style="width: 18rem; margin:30px">
+        <img src="<%= recipe.imageURL %>" class="card-img-top" alt="<%= recipe.title %>">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= recipe.title %>
+            </a>
+          </h5>
+          <p class="card-text">
+            <%= recipe.difficulty %>
+          </p>
+          <a href="/recipe/<%= recipe._id %>/recipeDetails" class="btn btn-success">Go to the Recipe</a>
+          
+        </div>
+      </div>
+    </div>
+    <% }) %>
+      <% } else { %>
+        <p>You have no recipes yet!</p>
+        <% } %>
+          <hr />
+        </div>
+        </div>
+      </div>
