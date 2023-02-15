@@ -45,9 +45,7 @@ const recipeSchema = new Schema(
    required: true,
     },
     imageURL: {
-      //data: Buffer,
       type: String,
-     // contentType: String,
     },
     videoURL: {
       type: String,

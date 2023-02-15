@@ -12,9 +12,9 @@ router.get('/new', isLoggedIn, (req, res, next) => {
 router.post('/new', fileUploader.single('recipe-image'), async (req, res) => {
   try {
     const body = req.body
-    console.log(body)
+    console.log(body, req.file)
     const author = req.session.user._id
-    const newRecipe = await Recipe.create({ ...body, ingredients: body.ingredients.split(' '), author: author, imageUrl: req.file.path })
+    const newRecipe = await Recipe.create({ ...body, ingredients: body.ingredients.split(' '), author: author, imageURL: req.file.path })
     const findUser = await User.findOneAndUpdate({ _id: author }, { $push: { recipe: newRecipe._id } }, { new: true, runValidators: true })
     res.render('recipe/one', { newRecipe })
   }
@@ -90,14 +90,15 @@ router.get("/:id/update", async (req, res) => {
 })
 
 router.post("/:id/update", fileUploader.single('recipe-image'), async (req, res, next) => {
-  let imageUrl;
+  let imageURL;
   if (req.file) {
-    imageUrl = req.file.path;
+    imageURL = req.file.path;
   } else {
-    imageUrl = existingImage;
+    imageURL = req.body.existingImage;
   }
+  console.log(req.body.existingImages)
   try {
-    await Recipe.findByIdAndUpdate(req.params.id, { ...req.body })
+    await Recipe.findByIdAndUpdate(req.params.id, { ...req.body, imageURL })
     res.redirect(`/recipe/${req.params.id}`)
   }
   catch (error) {

@@ -5,7 +5,7 @@
     <% allRecipes.forEach(recipe => { %>
       <div class="col-md-4 mb-5">
         <div class="card" style="width: 18rem;">
-          <img src="<%= recipe.imageUrl %>" class="card-img-top" alt="<%= recipe.title %>">
+          <img src="<%= recipe.imageURL %>" class="card-img-top" alt="<%= recipe.title %>">
           <div class="card-body">
             <h5 class="card-title">
               <a class="recipe-title" href="/recipe/<%- recipe._id %> ">
@@ -15,7 +15,7 @@
            <p class="card-text">
             <%= recipe.difficulty %>
             </p>
-            <a href="/recipe/<%= recipe._id %>" class="btn btn-primary">Edit</a>
+            <a href="/recipe/<%= recipe._id %>/update" class="btn btn-primary">Edit</a>
             <button type="submit">Add to Favourites</button>
           </div>
         </div>
