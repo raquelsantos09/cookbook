@@ -110,6 +110,7 @@ router.post("/:id/update", fileUploader.single('recipe-image'), async (req, res,
 router.post("/:id/delete", async (req, res) => {
   try {
     await Recipe.findByIdAndDelete(req.params.id)
+    //await cloudinary.uploader.destroy(user.cloudinary_id);
     res.redirect("/recipe/all")
   }
   catch (error) {
