@@ -8,9 +8,6 @@ body {
   background-size: cover;
 }
 
-
-
-
 /* set background image per page */
 .home-bg {
   background: url(../images/pexels-karolina-grabowska-4033212.jpg);
@@ -30,6 +27,17 @@ body {
 
 .login-bg {
   background: url(../images/pexels-ella-olsson-1640774\ \(1\).jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.profile-bg{
+  background-color: white
+}
+
+.create-bg {
+  background: url(../images/pexels-elle-hughes-1660030.jpg);
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -105,7 +113,46 @@ margin-right: 450px;
   .profile-heading{
     font-size: 70px;
     text-align: center;
-margin-top: 30px;
-margin-bottom: 30px;
+margin-top: 70px;
+margin-bottom: 40px;
   }
   
+  .profile-info-box{
+display: flex;
+flex-direction: row;
+margin-left: 200px;
+padding-bottom: 10px;
+margin-top: 30px ;
+margin-bottom: 20px ;
+  }
+
+  .contact-box{
+    padding-left: 100px;
+    padding-top: 20px;    
+  }
+
+  .info-bold{
+   font-weight: bold;
+  }
+
+  .profile-link-buttons{
+  text-align: center;
+  margin-top: 50px;
+ }
+
+ .btn.btn-outline-dark{
+margin-left: 50px;
+padding-left: 20px;
+padding-right: 20px;
+ }
+
+
+ /* styling profile navbar */
+.category-nav{
+margin-left: 90px;
+
+ }
+
+ .create-btn-nav{
+  margin-left: 70px;
+ }
