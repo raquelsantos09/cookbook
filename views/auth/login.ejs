@@ -42,8 +42,9 @@
 
         <button type="submit" class="btn btn-light">Log In</button>
 
+
         <% if (typeof errorMessage !=='undefined' ) { %>
-        <p style="color: red"><%= errorMessage %></p>
+        <p class="alert alert-danger" role="alert"><%= errorMessage %></p>
         <% } %>
       </form>
     </div>

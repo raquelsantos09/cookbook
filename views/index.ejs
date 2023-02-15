@@ -43,17 +43,18 @@
               }
             </script>
             <button
-              type="button"
-              onClick="directToHome()"
-              class="btn btn-light"
-            >
-              Log Out
-            </button>
-            <script>
-              function directToHome() {
-                window.location.href = "/";
-              }
-            </script>
+            type="button"
+            onClick="directToAll()"
+            class="btn btn-light"
+          >
+            All Recipes
+          </button>
+          <script>
+            function directToAll() {
+              window.location.href = "/recipe/all";
+            }
+          </script>
+            
 
             <li class="nbtn-group dropend">
               <a
@@ -62,7 +63,7 @@
                 href="#"
                 role="button"
                 aria-expanded="false"
-                >Recipes</a
+                >Categories</a
               >
 
               <ul class="dropdown-menu">
