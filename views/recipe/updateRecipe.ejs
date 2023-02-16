@@ -1,79 +1,169 @@
-<div class="container d-flex flex-column align-items-center">
-    <form class="w-50 d-flex flex-column" method="POST" action="/recipe/<%- recipeFound._id %>/update" enctype="multipart/form-data">
-      <h2 class="main-header">Update the Recipe</h2>
-      <label>
-        Title:
-        <input type="text" name="title" value="<%= recipeFound.title %>" />
-      </label>
-      <br />
-      <label>
-        Ingredients:
-        <input type="text" name="ingredients"  value="<%= recipeFound.ingredients %>"/>
-      </label>
-      <br />
-      <label>
-        Cooking Time:
-        <input type="number" name="cookingTime" value="<%= recipeFound.cookingTime %>"/>
-      </label>
-      <br />
-      <label>
-        Serving size:
-        <input type="number" name="servingSize" value="<%= recipeFound.servingSize %>" />
-      </label>
-      <br />
-      <label>
-        Instructions:
-        <textarea type="text" name="instructions" cols="40" rows="5" value="<%= recipeFound.instructions %>" > </textarea>
-      </label>
-      <br />
-   
-      <label>
-        Video-Link:
-        <input type="text" name="video" value="<%= recipeFound.video %>" />
-      </label>
-      <br />
-      <label>
-        Image:
-        <input type="file" name="recipe-image" class="form-control-file" />
-        <input type="text" name="existingImage" hidden value="<%= recipeFound.imageURL %>">
-      </label>
-      <br />
-      <label>
-        Origin:
-        <input type="text" name="origin" value="<%= recipeFound.origin %>" />
-      </label>
-      <br />
-      <label>
-        Difficulty:
+
+<body>
+  
+  <div class="card" style="width: 500px">
+  <div class="card-body" >
+    <h4 class="card-title">Update your Recipe</h4>
+    <hr color="gray" />
+
+    <form
+      class="auth-card-container"
+      method="POST"
+      action="/recipe/<%- recipeFound._id %>/update"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput"
+          name="title"
+          value="<%= recipeFound.title %>"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label"
+          >Ingredients</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput2"
+          name="ingredients"
+          value="<%= recipeFound.ingredients %>"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label"
+          >Cooking Time</label
+        >
+        <input
+          type="number"
+          class="form-control"
+          id="formGroupExampleInput2"
+          name="cookingTime"
+          value="<%= recipeFound.cookingTime %>"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label"
+          >Serving Size</label
+        >
+        <input
+          type="number"
+          class="form-control"
+          id="formGroupExampleInput2"
+          name="servingSize"
+          value="<%= recipeFound.servingSize %>" 
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label"
+          >Instructions</label
+        >
+        <textarea
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput2"
+          name="instructions"
+          cols="40"
+          rows="5"
+          value="<%= recipeFound.instructions %>"
+        ></textarea>
+      </div>
+
+
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label"
+          >Video Link</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput2"
+          name="video"
+          value="<%= recipeFound.video %>" 
+        />
+      </div>
+
+
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Image</label>
+        <input
+          type="file"
+          class="form-control-file"
+          id="formGroupExampleInput2"
+          name="recipe-image" />
+          <input type="text" name="existingImage" hidden value="<%= recipeFound.imageURL %>">
+      </div>
+
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Origin</label>
+        <input
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput2"
+          name="origin"
+          value="<%= recipeFound.origin %>"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label"
+          >Difficulty</label
+        >
         <select class="form-control" id="recipe-difficulty" name="difficulty" value="<%= recipeFound.difficulty %>">
           <option value="easy" selected>Easy</option>
           <option value="medium">Medium</option>
           <option value="hard">Hard</option>
         </select>
-        <br />
-        <label>
-          Category:
-          <select class="form-control" id="recipe-category" name="category" value="<%= recipeFound.category %>">
-            <option value="vegan" selected>Vegan</option>
-            <option value="vegetarian">Vegetarian</option>
-            <option value="maindish">Main-dish</option>
-            <option value="soup" selected>Soup</option>
-            <option value="salad">Salad</option>
-            <option value="dessert">Dessert</option>
-            <option value="breakfast" selected>Breakfast</option>
-            <option value="appetizers">Appetizers</option>
-            <option value="drinks">Drinks</option>
-          </select>
-        </label>
-        <br />
-        <br />
-        <label>
-          Keywords:
-          <input type="text" name="keywords" value="<%= recipeFound.keywords %>" />
-        </label>
-        <br />
-        <br />
-<button type="submit" class="btn btn-success">Save changes</button>
-        <br />
+      </div>
+
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label" value="<%= recipeFound.category %>"
+          >Category</label
+        >
+        <select class="form-control" id="recipe-category" name="category">
+          <option value="vegan" selected>Vegan</option>
+          <option value="vegetarian">Vegetarian</option>
+          <option value="maindish">Main-dish</option>
+          <option value="soup" selected>Soup</option>
+          <option value="salad">Salad</option>
+          <option value="dessert">Dessert</option>
+          <option value="breakfast" selected>Breakfast</option>
+          <option value="appetizers">Appetizers</option>
+          <option value="drinks">Drinks</option>
+        </select>
+      </div>
+
+
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label"
+          >Keywords</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput2"
+          name="keywords"
+          value="<%= recipeFound.keywords %>"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-light">Save changes</button>
     </form>
   </div>
+</div>
+
+</body>
+
+
+
+
+
+‚
