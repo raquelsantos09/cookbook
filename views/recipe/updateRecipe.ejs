@@ -49,7 +49,8 @@
           class="form-control"
           id="formGroupExampleInput2"
           name="cookingTime"
-          value="<%= recipeFound.cookingTime %> minutes"
+          value="<%= recipeFound.cookingTime %>"
+       
         />
       </div>
 
@@ -70,7 +71,7 @@
         <label for="formGroupExampleInput2" class="form-label"
           >Instructions</label
         >
-        <textarea
+        <input
           type="text"
           class="form-control"
           id="formGroupExampleInput2"
@@ -78,7 +79,7 @@
           cols="40"
           rows="5"
           value="<%= recipeFound.instructions %>"
-        ></textarea>
+        />
       </div>
 
 
@@ -122,7 +123,7 @@
           >Difficulty</label
         >
         <select class="form-control" id="recipe-difficulty" name="difficulty" value="<%= recipeFound.difficulty %>">
-          <option value="easy" selected>Easy</option>
+          <option value="easy">Easy</option>
           <option value="medium">Medium</option>
           <option value="hard">Hard</option>
         </select>
@@ -133,13 +134,13 @@
           >Category</label
         >
         <select class="form-control" id="recipe-category" name="category">
-          <option value="vegan" selected>Vegan</option>
+          <option value="vegan" >Vegan</option>
           <option value="vegetarian">Vegetarian</option>
           <option value="maindish">Main-dish</option>
-          <option value="soup" selected>Soup</option>
+          <option value="soup" >Soup</option>
           <option value="salad">Salad</option>
           <option value="dessert">Dessert</option>
-          <option value="breakfast" selected>Breakfast</option>
+          <option value="breakfast" >Breakfast</option>
           <option value="appetizers">Appetizers</option>
           <option value="drinks">Drinks</option>
         </select>
