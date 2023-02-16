@@ -159,13 +159,12 @@ margin-left: 90px;
 
  /* styling all recipes page */
  .container.text-center{
-  margin-left: 0px;
   margin-top: 50px;
  }
 
- .row{
-  display: flex;
-  flex-wrap: wrap;
+ .btn-all-recipes{
+  display:flex; 
+  align-items : center; 
  }
 
  
