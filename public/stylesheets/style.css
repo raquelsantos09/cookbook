@@ -33,11 +33,11 @@ body {
   background-size: cover;
 }
 .profile-bg{
-  background-color: white
+  background-color: rgb(250, 235, 218)
 }
 
 .create-bg {
-  background: url(../images/pexels-elle-hughes-1660030.jpg);
+  background: url(../images/pexels-karolina-grabowska-4033212.jpg);
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -156,3 +156,7 @@ margin-left: 90px;
  .create-btn-nav{
   margin-left: 70px;
  }
+
+
+
+ 
