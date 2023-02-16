@@ -1,12 +1,12 @@
 <%- include('../partials/nav.ejs') %>
-  <div class="container text-center  " style="margin-left: 0px; margin-top: 30px;">
+  <div class="container text-center">
     <h1>Recipes</h1>
-    <hr>
+    <hr color="gray" style="margin-top: 30px; margin-bottom: 40px;">
     <div class="row">
       <% if (allRecipes?.length> 0) { %>
         <% allRecipes.forEach(recipe=> { %>
           <div class="col-md-4 mb-5">
-            <div class="card" style="width: 18rem; height: 18rem; margin:10px;">
+            <div class="card" style="width: 19rem; height: 19rem; margin:10px;">
               <img src="<%= recipe.imageURL %>" class="card-img-top" alt="<%= recipe.title %>" style="max-height: 10rem">
               <div class="card-body" style=" text-transform: uppercase; text-align: center;">
                 <h5 class="card-title">
@@ -14,10 +14,10 @@
                   </a>
                 </h5>
                  </div>
-              <section style="display:flex; align-items : center; justify-content:left">
-                <a href="/recipe/<%= recipe._id %>" class="btn btn-outline-dark">Details</a>
-                <hr />
-                <button href="/recipe/myFavRecipes" type="button" class="btn btn-light"><svg
+              <section class="btn-all-recipes">
+                <a href="/recipe/<%= recipe._id %>" class="btn btn-outline-dark"  style="margin-left: 35px;">Details</a>
+               
+                <button href="/recipe/myFavRecipes" type="button" class="btn btn-light"  style="margin-left: 20px;"><svg
                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-suit-heart" viewBox="0 0 16 16">
                     <path
