@@ -27,6 +27,9 @@
             <p><span style="color: rgb(59, 34, 1);">Difficulty: </span>
               <%= recipeFound.difficulty%>
             </p>
+            <p><span style="color: rgb(59, 34, 1);">Video: </span>
+              <%= recipeFound.video %>
+            </p>
             <br />
             <form method="POST" action="/recipe/<%- recipeFound._id %>/delete" >
               <button type="submit" class="btn btn-block btn-outline-dark" style="width: 13rem ;">
