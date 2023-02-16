@@ -1,3 +1,19 @@
-<h1> your recipe is added!</h1>
-<p style="color: black;"> <%= newRecipe.title %> </p>
+<%- include('../partials/nav.ejs') %>
 
+    <div class="container text-center  " style="margin-left: 0px; ">
+        <div class="row">
+            <div class="col-md-4 mb-5">
+                <div class="card" style="width: 20rem; margin:30px">
+                    <img src="<%= newRecipe.imageURL %>" class="card-img-top" alt="<%= newRecipe.title %>">
+                    <div class="card-body" style=" text-align: left;">
+                        <h4> Your recipe is added!</h4>
+                        <h4 class="card-title"
+                            style=" font-weight: bold; text-transform: uppercase; color: rgb(59, 34, 1);">
+                            <%= newRecipe.title %>
+                        </h4>
+                        <br />
+                        <a href="/recipe/<%= newRecipe._id %>" class="btn btn-outline-dark">Go to the Recipe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
