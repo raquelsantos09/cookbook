@@ -127,6 +127,22 @@ router.get("/category/drinks", async (req, res, next) => {
 });
 
 
+/*app.get('/search', (req, res) => {
+  console.log(req.query)
+  const ourQueries = req.query
 
+  res.render('search', req.query)
+})
+
+router.get("/:id/search", async (req, res) => {
+  try {
+    const searchFound = await Recipe.findOne(req.query)
+    res.render("recipe/updateRecipe", { recipeFound, allUsers })
+  }
+  catch (error) {
+    console.log(error)
+    res.redirect("recipe/all")
+  }
+})*/
 
 module.exports = router;
