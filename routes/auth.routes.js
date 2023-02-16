@@ -89,10 +89,14 @@ router.get('/profile', isLoggedIn, (req, res) => {
 })
 
 router.get('/logout', isLoggedIn, (req, res) => {
-    req.session.destroy(err => {
+     req.session.destroy ()
+     res.redirect('/')
+    /*req.session.destroy(err => {
         if (err) next(err)
+        req.session.user = null
+        console.log( req.session.user)
         res.redirect('/')
-    })
+    })*/
 })
 
 module.exports = router
