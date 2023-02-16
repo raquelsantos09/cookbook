@@ -11,15 +11,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <button type="button" onClick="directToHome()" class="btn btn-light">
+           <form method="GET" action="/auth/logout" > <button type="submit" onClick="directToHome()" class="btn btn-light">
               Log Out
             </button>
-            <script>
-              function directToHome() {
-                window.location.href = "/";
-              }
-            </script>
-
+          </form>
             <button type="submit" onClick="directToProfile()" class="btn btn-light">
               My Profile
             </button>
