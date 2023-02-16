@@ -157,6 +157,15 @@ margin-left: 90px;
   margin-left: 70px;
  }
 
+ /* styling all recipes page */
+ .container.text-center{
+  margin-left: 0px;
+  margin-top: 50px;
+ }
 
+ .row{
+  display: flex;
+  flex-wrap: wrap;
+ }
 
  
