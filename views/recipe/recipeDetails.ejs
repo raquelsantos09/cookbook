@@ -16,7 +16,7 @@
               <%= recipeFound.cookingTime %> minutes
             </p>
             <p><span style="color: rgb(59, 34, 1);">Serving Size: </span>
-              <%= recipeFound.servingSize%>
+              <%= recipeFound.servingSize%> portions
             </p>
             <p><span style="color: rgb(59, 34, 1);">Instructions: </span>
               <%= recipeFound.instructions%>
@@ -28,22 +28,18 @@
               <%= recipeFound.difficulty%>
             </p>
             <p><span style="color: rgb(59, 34, 1);">Video: </span>
-             <a href=" <%= recipeFound.videoURL %>">link</a>
+             <a href=" <%= recipeFound.videoURL %>">YouTube Link</a>
             </p>
-            <iframe width="640" height="360" src=" <%= recipeFound.videoURL %>"
-              title="recipeFound.title" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
             <br />
             <form method="POST" action="/recipe/<%- recipeFound._id %>/delete" >
               <button type="submit" class="btn btn-block btn-outline-dark" style="width: 13rem ;">
-                Delete the recipe
+                Delete
               </button>
             </form>
             <br />
             <form method="GET" action="/recipe/<%- recipeFound._id %>/update">
               <button type="submit" class="btn btn-block btn-outline-dark" style="width: 13rem">
-                Update the recipe
+                Update
               </button>
             </form>
           </div>
