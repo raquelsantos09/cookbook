@@ -14,7 +14,7 @@ router.post('/new', fileUploader.single('recipe-image'), async (req, res) => {
     const body = req.body
     console.log(body, req.file)
     const author = req.session.user._id
-    const newRecipe = await Recipe.create({ ...body, ingredients: body.ingredients.split(''), author: author, imageURL: req.file.path })
+    const newRecipe = await Recipe.create({ ...body, ingredients: body.ingredients, author: author, imageURL: req.file.path })
     const findUser = await User.findOneAndUpdate({ _id: author }, { $push: { recipe: newRecipe._id } }, { new: true, runValidators: true })
     res.render('recipe/one', { newRecipe })
   }
