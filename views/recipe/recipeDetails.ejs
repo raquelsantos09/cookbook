@@ -1,9 +1,8 @@
 <%- include('../partials/nav.ejs') %>
-  <div class="container text-center  " style="margin-left: 0px; ">
-    <div class="row">
-      <div class="col-md-4 mb-5">
-        <div class="card" style="width: 50rem; margin:30px">
-          <img src="<%= recipeFound.imageURL %>" alt="<%= recipeFound.title %>">
+
+  <div class="container-details">
+        <div class="card" style="width: 40rem; height: 50rem; margin:10px;">
+          <img src="<%= recipeFound.imageURL %>" alt="<%= recipeFound.title %>" >
           <div class="card-body" style=" text-align: left;">
             <h4 style=" font-weight: bold; text-transform: uppercase;">
              <%= recipeFound.title %>
@@ -32,6 +31,7 @@
             </p>
             <br />
             <form method="POST" action="/recipe/<%- recipeFound._id %>/delete" >
+              <div class="btn-all-recipes">
               <button type="submit" class="btn btn-block btn-outline-dark" style="width: 13rem ;">
                 Delete
               </button>
@@ -41,15 +41,15 @@
               <button type="submit" class="btn btn-block btn-outline-dark" style="width: 13rem">
                 Update
               </button>
+            </div>
             </form>
           </div>
-        </div>
-        
-      </div>
-    </div>
+      
+      
 
-  </div>
- 
+        </div>
+
+</div>
 
 
  
