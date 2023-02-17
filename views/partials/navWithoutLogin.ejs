@@ -1,96 +1,97 @@
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="../Logo/logo-transparent.png" alt="cookbook logo" style="height: 40px">
-        </a>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+        <img src="../Logo/logo-transparent.png" alt="cookbook logo" style="height: 40px">
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          type="submit"
+          onClick="directToSignUp()"
+          class="btn btn-light"
         >
-          <span class="navbar-toggler-icon"></span>
+          Sign Up
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <button
-              type="submit"
-              onClick="directToSignUp()"
-              class="btn btn-light"
-            >
-              Sign Up
-            </button>
-            <script>
-              function directToSignUp() {
-                window.location.href = "/auth/signup";
-              }
-            </script>
-            <button
-              type="button"
-              onClick="directToLogIn()"
-              class="btn btn-light"
-            >
-              Log In
-            </button>
-            <script>
-              function directToLogIn() {
-                window.location.href = "/auth/login";
-              }
-            </script>
-            <button
-            type="button"
-            onClick="directToAll()"
-            class="btn btn-light"
-          >
-            All Recipes
-          </button>
-          <script>
-            function directToAll() {
-              window.location.href = "/recipe/all";
-            }
-          </script>
-            
+        <script>
+          function directToSignUp() {
+            window.location.href = "/auth/signup";
+          }
+        </script>
+        <button
+          type="button"
+          onClick="directToLogIn()"
+          class="btn btn-light"
+        >
+          Log In
+        </button>
+        <script>
+          function directToLogIn() {
+            window.location.href = "/auth/login";
+          }
+        </script>
+        <button
+        type="button"
+        onClick="directToAll()"
+        class="btn btn-light"
+      >
+        All Recipes
+      </button>
+      <script>
+        function directToAll() {
+          window.location.href = "/recipe/all";
+        }
+      </script>
+        
 
-            <li class="nbtn-group dropend">
-              <a
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-expanded="false"
-                style="font-size: 16px"
-                >Categories</a
-              >
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="/category/vegetarian">Vegetarian</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/category/vegan">Vegan</a>
-                </li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="/category/appetizers">Appetizer</a></li>
-                <li><a class="dropdown-item" href="/category/breakfast">Breakfast</a></li>
-                <li><a class="dropdown-item" href="/category/soup">Soup</a></li>
-                <li><a class="dropdown-item" href="/category/salad">Salad</a></li>
-                <li><a class="dropdown-item" href="/category/maindish">Main dish</a></li>
-                <li><a class="dropdown-item" href="/category/dessert">Dessert</a></li>
-                <li><a class="dropdown-item" href="/category/drinks">Drinks</a></li>
-              </ul>
+        <li class="nbtn-group dropend">
+          <a
+            class="nav-link dropdown-toggle"
+            data-bs-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-expanded="false"
+            style="font-size: 16px"
+            >Categories</a
+          >
+
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="/category/vegetarian">Vegetarian</a>
             </li>
+            <li>
+              <a class="dropdown-item" href="/category/vegan">Vegan</a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="/category/appetizers">Appetizer</a></li>
+            <li><a class="dropdown-item" href="/category/breakfast">Breakfast</a></li>
+            <li><a class="dropdown-item" href="/category/soup">Soup</a></li>
+            <li><a class="dropdown-item" href="/category/salad">Salad</a></li>
+            <li><a class="dropdown-item" href="/category/maindish">Main dish</a></li>
+            <li><a class="dropdown-item" href="/category/dessert">Dessert</a></li>
+            <li><a class="dropdown-item" href="/category/drinks">Drinks</a></li>
           </ul>
-         <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button type="button" class="btn btn-outline-dark">Search</button>
-          </form>
-        </div>
-      </div>
-    </nav>
+        </li>
+      </ul>
+     <form class="d-flex" role="search">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button type="button" class="btn btn-outline-dark">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
